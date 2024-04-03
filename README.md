@@ -1,4 +1,6 @@
-# Capstone-Project: 
+# Capstone-Project
+### Maia Vachon, Mai Nguyen and Oliver Reidmiller
+
 # Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
 
 
