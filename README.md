@@ -1,8 +1,11 @@
 # Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
 ### Maia Vachon, Mai Nguyen and Oliver Reidmiller
 
+## Introduction
 
+## Research Question
 
+## Data Sources
 
 ## Data Dictionary
 
