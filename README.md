@@ -10,9 +10,25 @@
 | State_Name         | String | Name of the state                        |
 | state_abbr         | String | Abbreviation code of the state           |
 | data_year          | String | Year of the data                          |
-| totalCrimes        | String | Total number of reported crimes          |
+| totalCrimes        | String | Total number of anti-LGBT+ reported  hate crimes          |
 | churchesPerState   | String | Number of churches per state              |
-| state_pop          | String | Total population of the state             |
+| state_pop          | String | Total population of the state             |                                  | Buddhist                        | float     | Number of affiliated churches with Buddhism                                                          |
+| Catholic                        | float     | Number of affiliated churches with Catholicism                                                        |
+| Evangelical Protestant          | float     | Number of affiliated churches with Evangelical Protestantism                                         |
+| Hindu                           | float     | Number of affiliated churches with Hinduism                                                           |
+| Historically Black Protestant   | float     | Number of affiliated churches with Historically Black Protestantism                                   |
+| Jehovah's Witness               | float     | Number of affiliated churches with Jehovah's Witness                                                  |
+| Jewish                          | float     | Number of affiliated churches with Judaism                                                            |
+| Mainline Protestant             | float     | Number of affiliated churches with Mainline Protestantism                                             |
+| Mormon                          | float     | Number of affiliated churches with Mormonism                                                          |
+| Muslim                          | float     | Number of affiliated churches with Islam                                                              |
+| Orthodox Christian              | float     | Number of affiliated churches with Orthodox Christianity                                              |
+| Other Christian                 | float     | Number of affiliated churches with Other Christian denominations                                      |
+| Other Faiths                    | float     | Number of affiliated churches with other religious faiths                                              |
+| Other World Religions           | float     | Number of affiliated churches with other world religions                                               |
+| Unaffiliated (religious "nones")| float     | Number of affiliated churches with unaffiliated (religious "nones")                                    |
+| Don't know                      | float     | Number of churches where the religious affiliation is unknown                                          |
+
 
 
 
