@@ -1,4 +1,4 @@
-# Capstone-Project
+# Capstone-Project: Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
 
 
 ## Data Dictionary
