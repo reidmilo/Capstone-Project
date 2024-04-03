@@ -1,7 +1,7 @@
-# Capstone-Project
+# Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
 ### Maia Vachon, Mai Nguyen and Oliver Reidmiller
 
-# Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
+
 
 
 ## Data Dictionary
