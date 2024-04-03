@@ -56,39 +56,8 @@ df$anti_lgbt <- as.integer(rowSums(anti_lgbt_df) >= 1)
 # Filter the data
 df_anti_lgbt_crime <- df %>% filter(anti_lgbt == 1)
 
-# Plot
-ggplot(df_anti_lgbt_crime, aes(x = factor(data_year))) +
-  geom_bar(fill = "skyblue") +
-  labs(x = "Year", y = "Frequency", title = "Anti-LGBT Hate Crimes in the United States",
-       caption = 'Marriage Equality Legalized in 2014', subtitle = '1991-2022') +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 20, hjust = 0.5),
-    axis.title = element_text(size = 14),
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.text.y = element_text(size = 12)
-  ) +
-  geom_vline(xintercept =24, linetype = "dashed", color = "black") 
-
 df_anti_lgbt_crime <- df_anti_lgbt_crime %>% 
   filter(data_year >= 2014 & data_year <= 2022)
-
-
-# Plot
-ggplot(df_anti_lgbt_crime, aes(x = factor(data_year))) +
-  geom_bar(fill = "skyblue") +
-  geom_text(aes(label = ..count..), stat = "count", vjust = -0.5, color = "black", size = 3) +  # Add data labels
-  labs(x = "Year", y = "Frequency", title = "Anti-LGBT Hate Crimes in the United States", subtitle = '2014-2022') +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 20, hjust = 0.5),
-    axis.title = element_text(size = 14),
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.text.y = element_text(size = 12)
-  )
-
-
-
 
 
 write.csv(df, "wide_hate_crime.csv")

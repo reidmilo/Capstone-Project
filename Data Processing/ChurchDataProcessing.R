@@ -43,10 +43,3 @@ affiliationDf <- apply(affiliationDf, 2, function(x) gsub(",", '', x))
 
 
 write.csv(affiliationDf,'affiliationDf.csv')
-
-class(ibmbs) #Data type: List
-ibmbs = ibmbs[[1]]
-ibmbs = ibmbs[,-12] #Delete the last column
-rownames(ibmbs) = ibmbs[,1]
-
-ibmbs
