@@ -10,7 +10,6 @@ df <- df %>% filter(STATE != 'AP')
 write.csv(df, 'churchesDf.csv')
 
 
-# Assuming you've already loaded the required libraries
 library(XML)
 library(RCurl)
 
@@ -21,10 +20,10 @@ churchStateAffiliation <- readHTMLTable(readLines(curl("https://www.pewresearch.
 # Convert list to data frame
 affiliationDf <- do.call(rbind, churchStateAffiliation)
 
-# Set row names (assuming state names are in the first column)
+# Set row names 
 rownames(affiliationDf) <- affiliationDf[,1]
 
-# Remove the first column (since it's already used as row names)
+# Remove the first column 
 affiliationDf <- affiliationDf[, -1]
 
 affiliationDf <- apply(affiliationDf, 2, function(x) gsub("< 1%", "0", x))
