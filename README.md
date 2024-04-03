@@ -3,11 +3,26 @@
 
 ## Data Dictionary
 
+# `capstoneData.csv`
+
+| Variable           | Class  | Description                              |
+|:-------------------|:-------|:-----------------------------------------|
+| State_Name         | String | Name of the state                        |
+| state_abbr         | String | Abbreviation code of the state           |
+| data_year          | String | Year of the data                          |
+| totalCrimes        | String | Total number of reported crimes          |
+| churchesPerState   | String | Number of churches per state              |
+| state_pop          | String | Total population of the state             |
+
+
+
+
+
 # `affiliationDf.csv`
 |variable |class  |description |
 |:--------|:------|:-----------|
-|State     |String|birth year|
-|Buddhist    |float|ercentage of Population Identifying as Buddhist|
+|State     |String|State of Data|
+|Buddhist    |float|Percentage of Population Identifying as Buddhist|
 |Catholic   |float|Percentage of Population Identifying as Catholic|
 |Evangelical Protestant   |float|Percentage of Population Identifying as Evangelical Protestant|
 |Hindu   |float|Percentage of Population Identifying as Hindu|
