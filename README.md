@@ -3,11 +3,17 @@
 
 ## Introduction
 
-## Research Question
+## Objectives
+Research Question
 
-## Data Sources
+## Data Analysis 
+### Data Collection
+Provide data sources
 
-## Data Dictionary
+### Data Processing 
+How was dataframe manipulated, merged, aggregated, etc.
+
+### Data Dictionary
 
 # `capstoneData.csv`
 
