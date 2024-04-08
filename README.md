@@ -21,12 +21,12 @@ How was dataframe manipulated, merged, aggregated, etc.
 
 | Variable                      | Class   | Description                                                                                  |
 |:------------------------------|:--------|:---------------------------------------------------------------------------------------------|
-| State_Name                    | String  | Name of the state                                                                            |
-| state_abbr                    | String  | Abbreviation code of the state                                                               |
-| data_year                     | String  | Year of the data                                                                             |
-| totalCrimes                   | String  | Total number of anti-LGBT+ reported hate crimes                                              |
-| churchesPerState              | String  | Number of churches per state                                                                 |
-| state_pop                     | String  | Total population of the state                                                                |
+| State Name                    | String  | Name of the state                                                                            |
+| State Abbreviation                    | String  | Abbreviation code of the state                                                               |
+| Year                     | String  | Year of the data                                                                             |
+| Hate Crimes                   | String  | Total number of anti-LGBT+ reported hate crimes                                              |
+| Churches per State              | String  | Number of churches per state                                                                 |
+| State Population                     | String  | Total population of the state                                                                |
 | White Evangelical Protestant  | Numeric | Percentage of White Evangelical Protestant population in the state                 |
 | White Mainline Protestant     | Numeric | Percentage of White Mainline Protestant population in the state                    |
 | Black Protestant              | Numeric | Percentage of Black Protestant population in the state                             |
