@@ -52,3 +52,52 @@ How was dataframe manipulated, merged, aggregated, etc.
 | Percent Rural Population      | Numeric | Percentage of urban population in the state                                                   |
 | Churches Per 100,000          | Numeric | Number of churches per 100,000 population in the state                                         |
 
+
+
+# Results 
+Here's the provided table formatted as markdown:
+
+```markdown
+| VARIABLES                   | Hate Crime | Religious Affiliation | Controlled Variables | FE-1   | FE-2   |
+|-----------------------------|------------|-----------------------|----------------------|--------|--------|
+| White_Protestant            | 0.247      | 1.097***              |                      | -0.063 | -0.208 |
+| Non_White_Protestant        | 0.360      | 0.600                 |                      | -0.490 | -0.671 |
+| White_Catholic              | 0.159      | 1.012***              |                      | 0.527  | 0.371  |
+| Non_White_Catholic          | 0.311      | 0.865**               |                      | 0.125  | -0.080 |
+| Mormon                      | 0.137      | 1.001**               |                      | -0.376 | -0.517 |
+| Jewish                      | 1.316      | 2.637***              |                      | 1.575  | 1.343  |
+| Other_Religions             | 1.334***   | 1.238**               |                      | 0.540  | 0.576  |
+| Unaffiliated                | 0.327      | 1.483***              |                      | -0.112 | -0.439 |
+| Population_to_Church_Ratio_100k | -0.000965** | -0.000885*         | -0.000510            | -0.00968 | -0.00429 |
+| High_School_or_Less         | 0.931      |                       | 1.180                | 0.267  | -0.288 |
+| College                     | 1.431*     |                       | 1.578**              | 0.661  | 0.097  |
+| Post_Graduate               | 1.084      |                       | 1.483*               | -0.156 | -1.105 |
+| White_Non_Hispanic          | 0.442      |                       | 0.335                | 0.462  | -0.183 |
+| Black_Non_Hispanic          | -0.106     |                       | -0.0674              | 1.025** | 0.265 |
+| Hispanic                    | 0.118      |                       | 0.0856               | 0.293  | -0.334 |
+| Multiracial                 | 0.491*     |                       | 0.605**              | 0.618* | 0.050  |
+| Unemployment_Rate           | -0.171     |                       | 0.135                | -0.329 | 1.044  |
+| Republican                  | -0.0886    |                       | -0.193**             | -0.110 | -0.373 |
+| Poverty_Rate                | 0.379      |                       | 0.328                | -0.256 | 0.238  |
+| Marriage_Legalization       | 0.0363**   |                       | 0.0304               | 0.0194 | 0.169*** |
+| 2015.Year                   |            |                       |                      |        | 0.0405 |
+| 2016.Year                   |            |                       |                      |        | -0.121*** |
+| 2017.Year                   |            |                       |                      |        | -0.102*** |
+| 2018.Year                   |            |                       |                      |        | -0.113*** |
+| 2019.Year                   |            |                       |                      |        | -0.101** |
+| 2020.Year                   |            |                       |                      |        | -0.124** |
+| 2021.Year                   |            |                       |                      |        | -0.0646*** |
+| LGBT_Pop                    | 0.271      |                       | 0.102                |        |        |
+| Rural_Pop                   | -0.000263  |                       | 0.000237             |        |        |
+| Constant                    | -1.662**   | -0.915**              | -1.524**             | 0.0492 | 1.003  |
+
+Observations: 271  
+R-squared: 0.279 (FE-1), 0.214 (FE-2), 0.247 (Controlled Variables), 0.269 (FE-1), 0.314 (FE-2)  
+Number of state_id: 48  
+
+Robust standard errors in parentheses  
+*** p<0.01, ** p<0.05, * p<0.1
+```
+
+Let me know if you need anything else!
+
