@@ -49,6 +49,6 @@ How was dataframe manipulated, merged, aggregated, etc.
 | Marriage Legalization         | Numeric | Indicator of whether marriage legalization is present in the state (0 for No, 1 for Yes)      |
 | Hate Crimes per 100,000       | Numeric | Number of hate crimes reported per 100,000 population in the state                             |
 | Crime Rate per 100,000        | Numeric | Total crime rate reported per 100,000 population in the state                                  |
-| Percent Urban Population      | Numeric | Percentage of urban population in the state                                                   |
+| Percent Rural Population      | Numeric | Percentage of urban population in the state                                                   |
 | Churches Per 100,000          | Numeric | Number of churches per 100,000 population in the state                                         |
 
