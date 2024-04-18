@@ -89,6 +89,9 @@ How was dataframe manipulated, merged, aggregated, etc.
 | Rural_Pop                   | -0.000263  |                       | 0.000237             |        |        |
 | Constant                    | -1.662**   | -0.915**              | -1.524**             | 0.0492 | 1.003  |
 
+Observations: 271  
+R-squared: 0.279 (FE-1), 0.214 (FE-2), 0.247 (Controlled Variables), 0.269 (FE-1), 0.314 (FE-2)  
+Number of state_id: 48  
 
-Let me know if you need anything else!
-
+Robust standard errors in parentheses  
+*** p<0.01, ** p<0.05, * p<0.1
