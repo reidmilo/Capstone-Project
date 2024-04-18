@@ -28,7 +28,7 @@ How was dataframe manipulated, merged, aggregated, etc.
 | Churches per State              | String  | Number of churches per state                                                                 |
 | State Population                     | String  | Total population of the state                                                                |
 | White  Protestant  | Numeric | Number of White Evangelical and White Mainline Protestant churches in the state                 |
-| Non white Protestant              | Numeric | Numberof Black, Hispanic, and Other Non White Protestant churches in the state                             |
+| Non white Protestant              | Numeric | Number of Black, Hispanic, and Other Non White Protestant churches in the state                             |
 | White Catholic                | Numeric | Numberof White Catholic churches in the state                                |
 | Non White Catholic             | Numeric | Number of Hispanic and Non White Catholic churches in the state                             |
 | Mormon                        | Numeric | Number of Mormon churches in the state                                        |
