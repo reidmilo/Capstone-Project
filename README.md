@@ -27,20 +27,16 @@ How was dataframe manipulated, merged, aggregated, etc.
 | Hate Crimes                   | String  | Total number of anti-LGBT+ reported hate crimes                                              |
 | Churches per State              | String  | Number of churches per state                                                                 |
 | State Population                     | String  | Total population of the state                                                                |
-| White Evangelical Protestant  | Numeric | Percentage of White Evangelical Protestant population in the state                 |
-| White Mainline Protestant     | Numeric | Percentage of White Mainline Protestant population in the state                    |
-| Black Protestant              | Numeric | Percentage of Black Protestant population in the state                             |
-| Hispanic Protestant           | Numeric | Percentage of Hispanic Protestant population in the state                          |
-| Other Non White Protestant    | Numeric | Percentage of Other Non-White Protestant population in the state                     |
-| White Catholic                | Numeric | Percentage of White Catholic population in the state                                |
-| Hispanic Catholic             | Numeric | Percentage of Hispanic Catholic population in the state                             |
-| Other Non White Catholic      | Numeric | Percentage of Other Non-White Catholic population in the state                        |
-| Mormon                        | Numeric | Percentage of Mormon population in the state                                        |
-| Jewish                        | Numeric | Percentage of Jewish population in the state                                        |
-| Unaffiliated                  | Numeric | Percentage of Unaffiliated population in the state                                   |
+| White  Protestant  | Numeric | Number of White Evangelical and White Mainline Protestant churches in the state                 |
+| Non white Protestant              | Numeric | Numberof Black, Hispanic, and Other Non White Protestant churches in the state                             |
+| White Catholic                | Numeric | Numberof White Catholic churches in the state                                |
+| Non White Catholic             | Numeric | Number of Hispanic and Non White Catholic churches in the state                             |
+| Mormon                        | Numeric | Number of Mormon churches in the state                                        |
+| Jewish                        | Numeric | Number of Jewish churches in the state                                        |
+| Other Religions                        | Numeric | Number of Hindu, Muslim, Jehovah's Witness, and Orthodox Christian churches in the state                                        |
+| Unaffiliated                  | Numeric | Number of Unaffiliated population in the state                                   |
 | High School or Less           | Numeric | Percentage of population with high school education or less in the state            |
-| Some College                  | Numeric | Percentage of population with some college education in the state                   |
-| College Graduate              | Numeric | Percentage of population with college graduate education in the state               |
+| College                  | Numeric | Percentage of population with atleast some college education in the state                   |
 | Post Graduate                 | Numeric | Percentage of population with post-graduate education in the state                  |
 | White Non Hispanic            | Numeric | Percentage of White Non-Hispanic population in the state                            |
 | Black Non Hispanic            | Numeric | Percentage of Black Non-Hispanic population in the state                            |
