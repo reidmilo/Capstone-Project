@@ -278,3 +278,8 @@ convert_state_abbreviations <- function(dataframe, abbrev_column) {
 Observations: 271  
 Robust standard errors in parentheses  
 *** p<0.01, ** p<0.05, * p<0.1
+
+
+
+## Conclusion
+
