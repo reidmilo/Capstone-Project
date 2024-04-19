@@ -13,7 +13,22 @@ Research Question
 Provide data sources
 
 ### Data Processing 
-How was dataframe manipulated, merged, aggregated, etc.
+
+#### `CSV Files`
+```
+crime_df <- read.csv('df_anti_lgbt_crime.csv')
+lgbt_pop_df <- read.csv('LGBT_State_Pop.csv')
+church_df <- read.csv('churchesDf.csv')
+state_pop_df <- read.csv('populationData.csv')
+affiliation_df <- read.csv('Affiliation Full Data.csv')
+education_df <- read.csv('Education Attainment.csv')
+race_df <- read.csv('Race-Ethnicity.csv')
+unemployment_df <- read.csv('unemployment data.csv')
+voting_df <- read.csv('Voting Data.csv')
+poverty_df <- read.csv('poverty data.csv')
+urban_df <- read.csv('Urban Pop.csv')
+
+```
 
 ### Data Dictionary
 
