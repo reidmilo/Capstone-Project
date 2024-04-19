@@ -47,11 +47,6 @@ convert_state_abbreviations <- function(dataframe, abbrev_column) {
   return(merged_df)
 }
 
-# Example usage:
-# Assuming your dataframe is called df and the column containing state abbreviations is called "state_abbrev"
-df <- data.frame(state_abbrev = c("CA", "NY", "TX", "FL", "IL"),
-                 value = c(10, 20, 30, 40, 50))
-
 # Convert state abbreviations to state names
 converted_df <- convert_state_abbreviations(df, "state_abbrev")
 
