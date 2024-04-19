@@ -1,18 +1,25 @@
 ### Maia Vachon, Mai Nguyen and Oliver Reidmiller
 ---
-# Exploring the Correlation Between Religious Affiliations and Anti-LGBT Hate Crimes and Legislation
+# Exploring the Correlation Between Religious Affiliation and Anti-LGBT Hate Crimes and Legislation
 
 
 ## Introduction
+Following the legalization of same-sex marriage by the United States Supreme Court in 2015, anti-LGBTQ+ hate crime rates have skyrocketed. Inspired by popular culture, news, and a previous mini-project topic, we shaped our research question around this observed rise in hate crimes in the United States and introduced a religious affiliation variable. This research hopes to uncover additional confounding variables within this topic and to impact conversations around protecting LGBTQ+ rights and safety through public policy and/or societal norms.
 
 ## Objectives
-Research Question
+Research Question: Does religious affiliation affect anti-LGBTQ+ hate crime in the United States?
 
-## Data Analysis 
-### Data Collection
-Provide data sources
+Additional Questions:
+- What variables contribute to the complexity of the growth of anti-LGBTQ+ hate crime?
+- Is hate crime accurately reported? Can we tell from the data?
+- Have certain events (COVID-19, major elections, etc.) had an impact on hate crime?
 
-### Data Processing 
+### Data
+- Anti-LGBTQ+ Hate Crime Data - FBI Uniform Crime Reporting Program
+- Places of Worship Data - US Department of Homeland Security 
+- Religious Affiliation Data - Pew Research Center
+- Population Data - US Census Bureau
+- Demographic Data - Public Religion Research Institute
 
 #### `Libraries`
 ```
@@ -33,7 +40,7 @@ voting_df <- read.csv('Voting Data.csv')
 poverty_df <- read.csv('poverty data.csv')
 urban_df <- read.csv('Urban Pop.csv')
 ```
-#### `Merging`
+#### `Data Processing`
 ```
 crime_df_agg <- crime_df %>% group_by(state_abbr,data_year) %>% summarise(crimes = n())
 
@@ -244,12 +251,13 @@ convert_state_abbreviations <- function(dataframe, abbrev_column) {
 
 
 
-# Results 
+# Visualizations + EDA 
 
 ![Image Description](Visualizations/Years%20Plot.png)
 ![Line Plot](Visualizations/line%20plot.png)
 ![Map Plot](Visualizations/mapPlot.png)
 
+# Regression Results
 
 | VARIABLES                   | Hate Crime | Religious Affiliation | Controlled Variables | FE-1   | FE-2   |
 |-----------------------------|------------|-----------------------|----------------------|--------|--------|
@@ -289,7 +297,5 @@ Observations: 271
 Robust standard errors in parentheses  
 *** p<0.01, ** p<0.05, * p<0.1
 
-
-
 ## Conclusion
-
+The regression models point to a weak relationship between religious affiliation and anti-LGBTQ+ hate crimes in the United States. However, the map visualization in particular highlights some possible issues with our data that point to inaccurate results. According to the literature, Southern states tend to be more politically conservative which, societally, often includes homophobic views. However, this is not depicted on the map, indicating that there must be an inconsistency with how hate crime data is being recorded or collected. Our conclusion to this project is while our data indicates a weak relationship between religious affiliation and LGBTQ+ hate crime, we need better data. For future research, if we had more time, we would aim to investigate state legislation data and county-level hate crime rates.
