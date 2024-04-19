@@ -241,6 +241,11 @@ convert_state_abbreviations <- function(dataframe, abbrev_column) {
 
 # Results 
 
+![Image Description](Visualizations/Years%20Plot.png)
+![Line Plot](Visualizations/line%20plot.png)
+![Map Plot](Visualizations/mapPlot.png)
+
+
 | VARIABLES                   | Hate Crime | Religious Affiliation | Controlled Variables | FE-1   | FE-2   |
 |-----------------------------|------------|-----------------------|----------------------|--------|--------|
 | White_Protestant            | 0.247      | 1.097***              |                      | -0.063 | -0.208 |
