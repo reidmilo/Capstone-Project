@@ -158,15 +158,9 @@ df <- df[, !colnames(df) %in% c('Asian.or.Pacific.Islander', 'Democratic','X','M
 
 ```
 divide_column_by_100 <- function(dataframe, column_name) {
-  # Check if the column exists in the dataframe
-  if (!(column_name %in% colnames(dataframe))) {
-    stop("Column not found in the dataframe")
-  }
-  
-  # Divide the specified column by 100
+  # Divide the  column by 100
   dataframe[[column_name]] <- dataframe[[column_name]] / 100
   
-  # Return the modified dataframe
   return(dataframe)
 }
 # Function to replace "N/A" with "NA" in a dataframe
@@ -182,9 +176,9 @@ replace_na_strings <- function(dataframe) {
     }
   }
   
-  # Return the modified dataframe
   return(dataframe)
 }
+
 convert_state_abbreviations <- function(dataframe, abbrev_column) {
   # Create a lookup table for state abbreviations and names
   state_lookup <- data.frame(
