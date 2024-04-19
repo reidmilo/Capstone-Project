@@ -28,8 +28,73 @@ voting_df <- read.csv('Voting Data.csv')
 poverty_df <- read.csv('poverty data.csv')
 urban_df <- read.csv('Urban Pop.csv')
 ```
-#### `CSV Files`
+#### `Merging`
+```
+crime_df_agg <- crime_df %>% group_by(state_abbr,data_year) %>% summarise(crimes = n())
 
+#Start Merging
+
+#Crime & Churches
+merged_df <- merge(crime_df_agg, church_df, by.x = 'state_abbr', by.y = 'STATE')
+
+merged_df <- convert_state_abbreviations(merged_df,'state_abbr')
+
+#Affiliation
+
+merged_df <- merge(merged_df, affiliation_df, by.x = c('State', 'data_year'), by.y = c('State', 'Year'))
+
+#Education
+merged_df <- merge(merged_df, education_df, by.x = c('State', 'data_year'), by.y = c('State', 'Year'))
+
+
+#Race
+merged_df <- merge(merged_df, race_df, by.x = c('State', 'data_year'), by.y = c('State', 'Year'))
+
+#LGBT Pop
+lgbt_pop_df <- lgbt_pop_df[1:51,-c(1,4)]
+
+colnames(lgbt_pop_df) <- c('State','LGBT_Pop')
+
+merged_df <- merge(merged_df, lgbt_pop_df, by = 'State')
+merged_df$LGBT_Pop <- as.numeric(merged_df$LGBT_Pop)
+
+#Add Population
+
+
+colnames(state_pop_df) <- c('State','2014','2015','2016','2017','2018','2019','2020','2021','2022')
+rownames(state_pop_df) <- state_pop_df[, 1]
+state_pop_df <- state_pop_df[, -1]
+
+merged_df$State_Pop <- NA
+state_pop_col_num <- which(colnames(merged_df) == 'State_Pop')
+
+
+for (i in 1:nrow(merged_df)){
+  state = merged_df[i,1]
+  year = merged_df[i,2]
+  
+  column_number <- which(colnames(state_pop_df) == year)
+  row_number <- which(rownames(state_pop_df) == state)
+  
+  merged_df[i,state_pop_col_num]<-state_pop_df[row_number,column_number]
+  
+}
+
+#Add Unemployment 
+merged_df <- merge(merged_df, unemployment_df, by.x = c('State', 'data_year'), by.y = c('STATE', 'YEAR'))
+
+#Add Voting
+voting_df<- convert_state_abbreviations(voting_df,'State')
+voting_df <- na.omit(voting_df)
+merged_df <- merge(merged_df, voting_df, by.x = c('State', 'data_year'), by.y = c('State.y', 'Year'))
+
+
+#Add Poverty Data
+merged_df <- merge(merged_df, poverty_df, by.x = c('State', 'data_year'), by.y = c('State', 'Year'))
+
+#Add Urban
+merged_df <- merge(merged_df, urban_df, by = "State")
+```
 
 ### Data Dictionary
 
