@@ -14,6 +14,11 @@ Provide data sources
 
 ### Data Processing 
 
+#### `Libraries`
+```
+library(dplyr)
+```
+
 #### `CSV Files`
 ```
 crime_df <- read.csv('df_anti_lgbt_crime.csv')
