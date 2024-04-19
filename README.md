@@ -96,6 +96,116 @@ merged_df <- merge(merged_df, poverty_df, by.x = c('State', 'data_year'), by.y =
 merged_df <- merge(merged_df, urban_df, by = "State")
 ```
 
+#### `Data Manipulation and Variable Derivation`
+```
+
+merged_df <- replace_na_strings(merged_df)
+merged_df$Black..non.Hispanic <- as.numeric(merged_df$Black..non.Hispanic)
+merged_df$Hispanic <- as.numeric(merged_df$Hispanic)
+merged_df$Asian.or.Pacific.Islander <- as.numeric(merged_df$Asian.or.Pacific.Islander)
+
+merged_df <- divide_column_by_100(merged_df,'High.school.or.less')
+merged_df <- divide_column_by_100(merged_df,'Some.college')
+merged_df <- divide_column_by_100(merged_df,'College.graduate')
+merged_df <- divide_column_by_100(merged_df,'Post.graduate')
+merged_df <- divide_column_by_100(merged_df,'White..non.Hispanic')
+merged_df <- divide_column_by_100(merged_df,'Black..non.Hispanic')
+merged_df <- divide_column_by_100(merged_df,'Hispanic')
+merged_df <- divide_column_by_100(merged_df,'Asian.or.Pacific.Islander')
+merged_df <- divide_column_by_100(merged_df,'Something.Else...Multiracial')
+merged_df <- divide_column_by_100(merged_df,'LGBT_Pop')
+merged_df <- divide_column_by_100(merged_df,'UNEMPLOYMENT.RATE')
+
+write.csv(merged_df, 'Merged_data.csv')
+
+#New Variables
+
+df <- read.csv('Merged_data.csv')
+
+#PopToChurch <- df$State_Pop/df$churchesPerState
+
+df$MarriageLegalization <- NA
+marriageLegal_col <- which(colnames(df) == 'MarriageLegalization')
+year_col <- which(colnames(df) == 'data_year')
+
+for (i in 1:nrow(df)) {
+  if (df[i, year_col] > 2015) {
+    df[i, marriageLegal_col] <- 1
+  } else {
+    df[i, marriageLegal_col] <- 0
+  }
+}
+  
+#Democratic is Reference Group
+df$otherReligions <- df$Muslim+df$Buddhist+df$Hindu+df$Orthodox.Christian+df$Jehovah.s.Witness
+
+df$crimes_per_100k <- (df$crimes/df$State_Pop)*100000
+df$whiteProtestant <- df$White.evangelical.Prot.+df$White.mainline.Prot.
+df$non_white_Protestant <- df$Hispanic.Protestant+df$Other.non.white.Prot.+df$Black.Protestant
+df$non_white_catholic <- df$Hispanic.Catholic+df$Other.non.white.Catholic
+
+df$population_to_church_ratio_100k <- (df$churchesPerState / df$State_Pop) * 100000
+
+df$college <- df$College.graduate+df$Some.college
+
+
+df <- df[, !colnames(df) %in% c('Asian.or.Pacific.Islander', 'Democratic','X','Muslim','Buddhist','College.graduate','Some.college',
+                                'Hindu','Orthodox.Christian','Jehovah.s.Witness','State_Pop','churchesPerState',
+                                'White.evangelical.Prot.','White.mainline.Prot.','crimes')]
+```
+
+#### `Functions Referenced`
+
+```
+divide_column_by_100 <- function(dataframe, column_name) {
+  # Check if the column exists in the dataframe
+  if (!(column_name %in% colnames(dataframe))) {
+    stop("Column not found in the dataframe")
+  }
+  
+  # Divide the specified column by 100
+  dataframe[[column_name]] <- dataframe[[column_name]] / 100
+  
+  # Return the modified dataframe
+  return(dataframe)
+}
+# Function to replace "N/A" with "NA" in a dataframe
+replace_na_strings <- function(dataframe) {
+  # Loop through each cell in the dataframe
+  for (i in 1:nrow(dataframe)) {
+    for (j in 1:ncol(dataframe)) {
+      # Check if the cell contains "N/A"
+      if (dataframe[i, j] == "N/A") {
+        # Replace "N/A" with "NA"
+        dataframe[i, j] <- NA
+      }
+    }
+  }
+  
+  # Return the modified dataframe
+  return(dataframe)
+}
+convert_state_abbreviations <- function(dataframe, abbrev_column) {
+  # Create a lookup table for state abbreviations and names
+  state_lookup <- data.frame(
+    Abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                     "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                     "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                     "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                     "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+    State = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
+              "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
+              "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", 
+              "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", 
+              "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", 
+              "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", 
+              "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", 
+              "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
+              "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", 
+              "Wisconsin", "Wyoming")
+  )
+```
+
 ### Data Dictionary
 
 # `capstoneData.csv`
